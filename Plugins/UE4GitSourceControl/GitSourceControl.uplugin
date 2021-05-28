@@ -1,0 +1,25 @@
+{
+	"FileVersion" : 3,
+	"Version" : 37,
+	"VersionName" : "2.0",
+	"FriendlyName" : "Git LFS 2",
+	"Description" : "Git source control management (dev)",
+	"Category" : "Source Control",
+	"CreatedBy" : "TonyXia",
+	"CreatedByURL" : "",
+	"DocsURL" : "",
+	"MarketplaceURL" : "",
+	"SupportURL" : "",
+	"EnabledByDefault" : true,
+	"CanContainContent" : false,
+	"IsBetaVersion" : true,
+	"Installed" : true,
+	"Modules" :
+	[
+		{
+			"Name" : "GitSourceControl",
+			"Type" : "Editor",
+			"LoadingPhase" : "Default"
+		}
+	]
+}
