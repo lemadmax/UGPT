@@ -98,15 +98,15 @@ bool FGitCheckOutWorker::Execute(FGitSourceControlCommand& InCommand)
 	if (InCommand.Files.Num() > 0) {
 		GitSourceControlUtils::FindRepoRoot(InCommand.Files[0], PathToRepositoryRoot);
 	}
-	TArray<FString> Results;
-	TArray<FString> ErrorMessages;
-	TArray<FString> Parameters;
-	Parameters.Add(TEXT("--rebase"));
-	Parameters.Add(TEXT("--autostash"));
-	// TODO Configure origin
-	Parameters.Add(TEXT("origin"));
-	Parameters.Add(TEXT("HEAD"));
-	InCommand.bCommandSuccessful &= GitSourceControlUtils::RunCommand(TEXT("pull"), InCommand.PathToGitBinary, PathToRepositoryRoot, Parameters, TArray<FString>(), Results, ErrorMessages);
+	//TArray<FString> Results;
+	//TArray<FString> ErrorMessages;
+	//TArray<FString> Parameters;
+	//Parameters.Add(TEXT("--rebase"));
+	//Parameters.Add(TEXT("--autostash"));
+	//// TODO Configure origin
+	//Parameters.Add(TEXT("origin"));
+	//Parameters.Add(TEXT("HEAD"));
+	//InCommand.bCommandSuccessful &= GitSourceControlUtils::RunCommand(TEXT("pull"), InCommand.PathToGitBinary, PathToRepositoryRoot, Parameters, TArray<FString>(), Results, ErrorMessages);
 
 	if(InCommand.bUsingGitLfsLocking)
 	{
