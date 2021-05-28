@@ -116,11 +116,11 @@ bool FGitCheckOutWorker::Execute(FGitSourceControlCommand& InCommand)
 		{
 			TArray<FString> OneFile;
 			OneFile.Add(File);
-			//InCommand.bCommandSuccessful &= GitSourceControlUtils::RunCommand(TEXT("lfs lock"), InCommand.PathToGitBinary, InCommand.PathToRepositoryRoot, TArray<FString>(), OneFile, InCommand.InfoMessages, InCommand.ErrorMessages);
 			while (FGitSourceControlLocksWorker::IsWrittingCache()) {}
 			FGitSourceControlLocksWorker::LockCache();
 			GitSourceControlUtils::CacheLock(OneFile);
 			FGitSourceControlLocksWorker::UnlockCache();
+			//InCommand.bCommandSuccessful &= GitSourceControlUtils::RunCommand(TEXT("lfs lock"), InCommand.PathToGitBinary, PathToRepositoryRoot, TArray<FString>(), OneFile, InCommand.InfoMessages, InCommand.ErrorMessages);
 			FGitSourceControlLocksWorker::PushCommand(TEXT("lfs lock"), InCommand.PathToGitBinary, PathToRepositoryRoot, TArray<FString>(), OneFile);
 		}
 
