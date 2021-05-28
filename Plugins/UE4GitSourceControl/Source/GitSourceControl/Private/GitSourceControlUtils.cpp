@@ -67,8 +67,6 @@ static bool RunCommandInternalRaw(const FString& InCommand, const FString& InPat
 	FString FullCommand;
 	FString LogableCommand; // short version of the command for logging purpose
 
-	TArray<FString> Files;
-	for (auto File : InFiles) Files.Add(File);
 
 	if(!InRepositoryRoot.IsEmpty())
 	{
@@ -118,7 +116,7 @@ static bool RunCommandInternalRaw(const FString& InCommand, const FString& InPat
 		LogableCommand += TEXT(" ");
 		LogableCommand += Parameter;
 	}
-	for(const auto& File : Files)
+	for(const auto& File : InFiles)
 	{
 		LogableCommand += TEXT(" \"");
 		LogableCommand += File;
